@@ -1,0 +1,87 @@
+/*  Remove text from homepage/newtab website shortcuts. */
+/*  Check if pinned by using context menu.              */
+@-moz-document url("about:home"),
+url("about:newtab") {
+    .outer-wrapper .top-site-outer {
+        vertical-align: middle !important;
+      }
+    .outer-wrapper  .top-site-inner .title{
+        display: none !important;
+    }
+
+    .outer-wrapper .top-site-outer .top-site-inner .tile{
+        border-bottom-left-radius: 10px !important;
+        border-bottom-right-radius: 10px !important;
+        border-radius: 10px !important;
+        border-bottom: 0 !important;
+    }
+     #root .outer-wrapper .top-sites-list .top-site-outer {
+        padding: 20px 20px 4px !important;
+    }
+}
+
+* {
+  scrollbar-width: none !important;
+}
+
+@-moz-document url("about:newtab") {
+  body,html,#root {
+    overflow: hidden;
+  }
+  .logo {
+    background: url("firefox.png") !important;
+    background-size: cover !important;
+    width: 164px !important;
+    height: 164px !important;
+  }
+  .search-inner-wrapper,
+  .icon-settings{
+    display:none !important;
+  }
+  .wordmark {
+    height: 164px !important;
+    width:268px !important;
+    background-size: 268px !important;
+  } 
+  .logo-and-wordmark::after {
+    content: "I ❤ lindawawitas";
+    position:absolute;
+    margin-top:100px;
+    margin-left: 50%;
+    transform: translateX(-50%)
+  }
+  .non-collapsible-section,
+  .body-wrapper {
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+  }
+  .non-collapsible-section,
+  .body-wrapper {
+    transition: all .3s ease !important;
+  }
+  .outer-wrapper > main:nth-child(1):hover .non-collapsible-section {
+    opacity:0;
+    top:40%;
+  }
+  .outer-wrapper > main:nth-child(1):not(:hover) .body-wrapper {
+    opacity:0;
+    top:60%;
+  }
+  
+  .collapsible-section {
+    padding:0 !important;
+    width:fit-content !important;
+  }
+  @media (min-width: 866px) {
+      .top-sites-list .hide-for-narrow { display: inline-block !important;}
+  }
+  #root {
+    background-color: #161719;!important;
+    background-size: cover !important;
+  }
+  .body-wrapper {
+    width: 468px
+  }
+}
