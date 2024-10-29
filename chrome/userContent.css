@@ -44,7 +44,7 @@ url("about:newtab") {
     background-size: 268px !important;
   } 
   .logo-and-wordmark::after {
-    content: "I ❤ lindawawitas";
+    content: " v ";
     position:absolute;
     margin-top:100px;
     margin-left: 50%;
